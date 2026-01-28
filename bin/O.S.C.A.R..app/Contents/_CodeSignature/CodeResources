@@ -19,23 +19,23 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>MacOS/OSCAR.debug.dylib</key>
+		<key>MacOS/O.S.C.A.R..debug.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			igLToz9rakmvi6ccOPpPL/ktKXo=
+			moEKEJCwalwaRmpwApy2xzLrxy0=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"8a02d3a33f6b6a49af8ba71c38fa4f2ff92d297a"</string>
+			<string>cdhash H"9a810a1090b06a5c1a466a70029cb6c732ebc72d"</string>
 		</dict>
 		<key>MacOS/__preview.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			vHkJRfYHzMcqbSHcOo/if/cF4v8=
+			CRBnhQSNJqL3owTE0Siy52sBef4=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"bc790945f607ccc72a6d21dc3a8fe27ff705e2ff"</string>
+			<string>cdhash H"09106785048d26a2f7a304c4d128b2e76b0179fe"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>

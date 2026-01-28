@@ -6,8 +6,10 @@
 	<string>25C56</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>O.S.C.A.R.</string>
 	<key>CFBundleExecutable</key>
-	<string>OSCAR</string>
+	<string>O.S.C.A.R.</string>
 	<key>CFBundleIconFile</key>
 	<string>AppIcon</string>
 	<key>CFBundleIconName</key>
@@ -17,7 +19,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>OSCAR</string>
+	<string>O.S.C.A.R.</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -46,5 +48,7 @@
 	<string>17C52</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>14.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Motivated Pixels</string>
 </dict>
 </plist>
