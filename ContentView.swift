@@ -6,7 +6,11 @@ struct ContentView: View {
     let gridSize = 5
     let borderSize: CGFloat = 16
     @State private var gridData: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
-    @State private var numberOfPDFs: String = "10"
+    @State private var numberOfPDFs: String = "20"
+    @State private var showError: Bool = false
+    @State private var errorMessage: String = ""
+    @State private var oscarLines: [String] = []
+    @Environment(\.openWindow) private var openWindow
 
     var body: some View {
         GeometryReader { geometry in
@@ -125,6 +129,7 @@ struct ContentView: View {
         .frame(minWidth: 400, minHeight: 400)
         .background(Color.white)
         .onAppear {
+            loadOscarLines()
             generateRandomData()
         }
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("PrintRequested"))) { _ in
@@ -133,77 +138,64 @@ struct ContentView: View {
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("SavePDFRequested"))) { _ in
             saveToPDF()
         }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("OscarDataUpdated"))) { _ in
+            loadOscarLines()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("OpenEditorRequested"))) { _ in
+            openWindow(id: "oscar-editor")
+        }
+        .alert("Error", isPresented: $showError) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(errorMessage)
+        }
     }
 
-    func loadDataFromFile() {
-        // Load oscar.txt from app bundle
-        guard let path = Bundle.main.path(forResource: "oscar", ofType: "txt") else {
-            print("Could not find oscar.txt file in bundle")
-            return
-        }
-
-        print("Loading data from: \(path)")
-
+    func loadOscarLines() {
         do {
-            let content = try String(contentsOfFile: path, encoding: .utf8)
-            let lines = content.components(separatedBy: .newlines).filter { !$0.isEmpty }
-
-            var newData: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
-
-            for (rowIndex, line) in lines.enumerated() {
-                if rowIndex >= gridSize { break }
-                let cells = line.components(separatedBy: ",")
-                for (colIndex, cell) in cells.enumerated() {
-                    if colIndex >= gridSize { break }
-                    newData[rowIndex][colIndex] = cell.trimmingCharacters(in: .whitespaces)
-                }
-            }
-
-            gridData = newData
+            oscarLines = try OscarFileManager.shared.loadOscarLines()
         } catch {
-            print("Error reading file: \(error)")
+            errorMessage = error.localizedDescription
+            showError = true
         }
     }
 
     func generateRandomData() {
-        // Load oscar.txt from app bundle
-        guard let path = Bundle.main.path(forResource: "oscar", ofType: "txt") else {
-            print("Could not find oscar.txt file in bundle")
+        // Use cached oscar lines
+        if oscarLines.isEmpty {
+            loadOscarLines()
+        }
+
+        let lines = oscarLines
+        if lines.isEmpty {
             return
         }
 
-        do {
-            let content = try String(contentsOfFile: path, encoding: .utf8)
-            let lines = content.components(separatedBy: .newlines).filter { !$0.isEmpty }
+        // Clear the grid first
+        var newData: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
 
-            // Clear the grid first
-            var newData: [[String]] = Array(repeating: Array(repeating: "", count: 5), count: 5)
+        // Use a mutable copy of lines and randomly pick items one at a time
+        var availableLines = lines
+        var rng = SystemRandomNumberGenerator()
 
-            // Use a mutable copy of lines and randomly pick items one at a time
-            var availableLines = lines
-            var rng = SystemRandomNumberGenerator()
-
-            // Randomly fill cells (skip center square for Oscar image)
-            for row in 0..<gridSize {
-                for col in 0..<gridSize {
-                    // Skip center square (row 2, col 2)
-                    if row == 2 && col == 2 {
-                        continue
-                    }
-                    if !availableLines.isEmpty {
-                        // Pick a random index from remaining items
-                        let randomIndex = Int.random(in: 0..<availableLines.count, using: &rng)
-                        newData[row][col] = availableLines[randomIndex]
-                        // Remove the selected item so it won't be used again
-                        availableLines.remove(at: randomIndex)
-                    }
+        // Randomly fill cells (skip center square for Oscar image)
+        for row in 0..<gridSize {
+            for col in 0..<gridSize {
+                // Skip center square (row 2, col 2)
+                if row == 2 && col == 2 {
+                    continue
+                }
+                if !availableLines.isEmpty {
+                    // Pick a random index from remaining items
+                    let randomIndex = Int.random(in: 0..<availableLines.count, using: &rng)
+                    newData[row][col] = availableLines[randomIndex]
+                    // Remove the selected item so it won't be used again
+                    availableLines.remove(at: randomIndex)
                 }
             }
-
-            gridData = newData
-        } catch {
-            print("Error reading file: \(error)")
         }
+
+        gridData = newData
     }
 
     func printView() {
@@ -303,16 +295,19 @@ struct ContentView: View {
             let printableWidth = printInfo.paperSize.width - printInfo.leftMargin - printInfo.rightMargin
             let printableHeight = printInfo.paperSize.height - printInfo.topMargin - printInfo.bottomMargin
 
-            // Load data once to avoid repeated file reads
-            guard let path = Bundle.main.path(forResource: "oscar", ofType: "txt") else {
-                print("Could not find oscar.txt file in bundle")
+            // Use cached oscar lines
+            if oscarLines.isEmpty {
+                loadOscarLines()
+            }
+
+            let lines = oscarLines
+            if lines.isEmpty {
+                errorMessage = "No Oscar items available"
+                showError = true
                 return
             }
 
             do {
-                let content = try String(contentsOfFile: path, encoding: .utf8)
-                let lines = content.components(separatedBy: .newlines).filter { !$0.isEmpty }
-
                 // Generate and save each PDF
                 for i in 1...count {
                     // Generate random grid data with improved randomness
@@ -360,7 +355,8 @@ struct ContentView: View {
 
                 print("Successfully generated and saved \(count) PDFs")
             } catch {
-                print("Error generating PDFs: \(error)")
+                errorMessage = error.localizedDescription
+                showError = true
             }
         }
     }

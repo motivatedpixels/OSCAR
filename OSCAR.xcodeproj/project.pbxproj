@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F8A37B02F42408900D540B0 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A37AE2F42408900D540B0 /* EditorView.swift */; };
+		2F8A37B12F42408900D540B0 /* OscarFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A37AF2F42408900D540B0 /* OscarFileManager.swift */; };
 		AA0000010000000000000001 /* OSCARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000001 /* OSCARApp.swift */; };
 		AA0000030000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000040000000000000001 /* ContentView.swift */; };
 		AA0000190000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA0000200000000000000001 /* Assets.xcassets */; };
-		AA0000210000000000000001 /* oscar.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA0000220000000000000001 /* oscar.txt */; };
+		AA0000210000000000000001 /* input/oscar.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA0000220000000000000001 /* input/oscar.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA0000000000000000000001 /* OSCAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F8A37AE2F42408900D540B0 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		2F8A37AF2F42408900D540B0 /* OscarFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscarFileManager.swift; sourceTree = "<group>"; };
+		AA0000000000000000000001 /* OSCAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = OSCAR.app; path = O.S.C.A.R..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000020000000000000001 /* OSCARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCARApp.swift; sourceTree = "<group>"; };
 		AA0000040000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000050000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000200000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AA0000220000000000000001 /* oscar.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input/oscar.txt; sourceTree = "<group>"; };
+		AA0000220000000000000001 /* input/oscar.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input/oscar.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,10 +40,12 @@
 		AA0000070000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				2F8A37AE2F42408900D540B0 /* EditorView.swift */,
+				2F8A37AF2F42408900D540B0 /* OscarFileManager.swift */,
 				AA0000020000000000000001 /* OSCARApp.swift */,
 				AA0000040000000000000001 /* ContentView.swift */,
 				AA0000200000000000000001 /* Assets.xcassets */,
-				AA0000220000000000000001 /* oscar.txt */,
+				AA0000220000000000000001 /* input/oscar.txt */,
 				AA0000050000000000000001 /* Info.plist */,
 				AA0000080000000000000001 /* Products */,
 			);
@@ -112,7 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0000190000000000000001 /* Assets.xcassets in Resources */,
-				AA0000210000000000000001 /* oscar.txt in Resources */,
+				AA0000210000000000000001 /* input/oscar.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0000030000000000000001 /* ContentView.swift in Sources */,
+				2F8A37B02F42408900D540B0 /* EditorView.swift in Sources */,
+				2F8A37B12F42408900D540B0 /* OscarFileManager.swift in Sources */,
 				AA0000010000000000000001 /* OSCARApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +277,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.OSCAR;
-				PRODUCT_NAME = "O.S.C.A.R.";
+				PRODUCT_NAME = O.S.C.A.R.;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -295,7 +303,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.OSCAR;
-				PRODUCT_NAME = "O.S.C.A.R.";
+				PRODUCT_NAME = O.S.C.A.R.;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

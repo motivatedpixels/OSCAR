@@ -7,7 +7,7 @@ One of the games is O.S.C.A.R. It's like Bingo, but with different letters. Yup,
 I used to manually generate the random cards using Illustrator and a lot of patience.
 For our 20th anniversary of the party this year (2026), I decided to (finally) build an app to do the randomization, layout, and printing for me.
 
-It's now super easy to generate your own O.S.C.A.R. sheets for your own party.
+It's now super easy to generate O.S.C.A.R. sheets for your own party.
 
 ---
 
@@ -15,4 +15,4 @@ If you'd like to update what gets randomized for each cell, modify the `input/os
 
 ---
 
-*This app was vibe coded with Claude. Enjoy!*
+*This app was completely vibe coded with Claude. Enjoy!*
