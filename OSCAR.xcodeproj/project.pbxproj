@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		2F8A37AE2F42408900D540B0 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		2F8A37AF2F42408900D540B0 /* OscarFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscarFileManager.swift; sourceTree = "<group>"; };
-		AA0000000000000000000001 /* OSCAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = OSCAR.app; path = O.S.C.A.R..app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000001 /* O.S.C.A.R..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = O.S.C.A.R..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000020000000000000001 /* OSCARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSCARApp.swift; sourceTree = "<group>"; };
 		AA0000040000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000050000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		AA0000080000000000000001 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA0000000000000000000001 /* OSCAR.app */,
+				AA0000000000000000000001 /* O.S.C.A.R..app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			);
 			name = OSCAR;
 			productName = OSCAR;
-			productReference = AA0000000000000000000001 /* OSCAR.app */;
+			productReference = AA0000000000000000000001 /* O.S.C.A.R..app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -262,14 +262,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N56S24869L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -288,14 +290,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = N56S24869L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

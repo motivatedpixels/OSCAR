@@ -1,3 +1,4 @@
+----- General
 At least six of us agree that an award winner needs plastic surgery
 An award winner has a suit that at least six of us agree is pimped out
 At least six of us agree that an award winner has had plastic surgery
@@ -14,26 +15,17 @@ The camera shows someone who has been in rehab
 The camera shows someone checking their watch
 An award winner has a dress that more than six of us agree is elegant
 An award winner doesn’t look happy
-Alec Baldwin or any Baldwin is shown
 A presenter makes a joke that bombs
-Someone mentions Obama
-Someone mentions Biden
 Someone thanks more than five people in a row in their speech
-Someone mentions a Stranger Things
 A presenter makes a joke about one of their movies
 Someone mentions a previous Oscar host
 The camera show someone who has done a commercial
-An Oscar winner says “Sinner” in their speech (but not "Sinners")
-The camera shows someone who has costarred with Hugh Jackman
-The camera shows someone who has costarred with Denzel Washington
 A winner is late getting to the stage
 An actor or actress mentions another nominee by name
 An actor or actress says they don’t deserve the award
 The camera shows someone wearing a wig
 The camera shows someone from a reality show
 The camera shows someone from a news network
-The camera shows someone from a Marvel movie
-The camera shows someone from “Game of Thrones”
 Someone thanks “Matt” in their acceptance speech
 The camera focuses on someone’s butt
 Someone mentions climate change
@@ -60,7 +52,6 @@ Someone says “hard core”
 Someone is wearing a green tie
 At least seven people agree an award winner didn’t deserve it
 Someone who has played an alien is shown on the screen
-Someone mentions The Super Bowl
 Someone points to an actress in the audience during their speech
 Someone points to an actor in the audience during their speech
 Someone skips or jumps on their way to the podium
@@ -75,16 +66,28 @@ The camera shows a rapper-actor
 The camera shows someone bald (Kojak bald)
 A cartoon makes an appearance on stage or in the audience
 A Spanish-accented person wins an award
-The camera shows someone who has been in a Spielberg film
-The camera shows someone who has costarred with Kevin Hart
-The camera shows someone who has costarred with Keanu Reeves
 Someone at this party is wearing the costume of an award winner
 A presenter makes an A-List star laugh
 The camera shows someone who has voiced a cartoon character
-The camera shows a Star Wars actor
 The camera shows someone who speaks French
+----- Topical
 Someone mentions Venezuela
+Someone mentions Iran
 Someone mentions one of the hosts this year
+Alec Baldwin or any Baldwin is shown
+Someone mentions Obama
+Someone mentions a Stranger Things
+An Oscar winner says “Sinner” in their speech (but not "Sinners")
+The camera shows someone who has costarred with Hugh Jackman
+The camera shows someone who has costarred with Denzel Washington
+The camera shows someone from a Marvel movie
+The camera shows someone from “Game of Thrones”
+Someone mentions The Super Bowl
+The camera shows someone who has been in a Spielberg film
+The camera shows someone who has costarred with Kevin Hart
+The camera shows someone who has costarred with Keanu Reeves
+The camera shows a Star Wars actor
+----- Movie Nominees
 "Bugonia" wins an award
 "F1" wins an award
 "Frankenstein" wins an award
@@ -95,6 +98,13 @@ Someone mentions one of the hosts this year
 "Sentimental Value" wins an award
 "Sinners" wins an award
 "Train Dreams" wins an award
+"Elio" wins an award
+"KPop Demon Hunters" wins an award
+"Arco" wins an award
+"Zootopia 2" wins an award
+"It Was Just an Accident" wins an award
+"Sirat" wins an award
+----- Acting Nominees
 Timothée Chalamet wins an award
 Leonardo DiCaprio wins an award
 Ethan Hawke wins an award

@@ -89,8 +89,7 @@ struct EditorView: View {
 
     private func loadContent() {
         do {
-            let lines = try OscarFileManager.shared.loadOscarLines()
-            content = lines.joined(separator: "\n")
+            content = try OscarFileManager.shared.loadOscarContentForEditor()
             originalContent = content
             hasUnsavedChanges = false
         } catch {

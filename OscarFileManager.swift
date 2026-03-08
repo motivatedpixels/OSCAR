@@ -89,23 +89,25 @@ class OscarFileManager {
         return oscarFileURL
     }
 
-    /// Load oscar.txt lines from Application Support (copy from bundle first if needed)
-    func loadOscarLines() throws -> [String] {
-        // Ensure file exists in Application Support (copy from bundle if needed)
+    /// Load raw oscar.txt content for the editor (preserves section dividers starting with "-")
+    func loadOscarContentForEditor() throws -> String {
         let fileURL = try ensureOscarFileExists()
-
-        // Read and parse file from Application Support
-        let content: String
         do {
-            content = try String(contentsOf: fileURL, encoding: .utf8)
+            return try String(contentsOf: fileURL, encoding: .utf8)
         } catch let error as NSError {
             if error.domain == NSCocoaErrorDomain && error.code == NSFileReadNoPermissionError {
                 throw OscarFileError.permissionDenied
             }
             throw OscarFileError.fileNotFound
         }
+    }
 
-        // Split into lines and filter (remove empty lines and headers starting with "-")
+    /// Load oscar.txt lines from Application Support (copy from bundle first if needed).
+    /// Excludes empty lines and section dividers (lines starting with "-"); use for grid item selection only.
+    func loadOscarLines() throws -> [String] {
+        let content = try loadOscarContentForEditor()
+
+        // Split into lines and filter (remove empty lines and section dividers starting with "-")
         let lines = content
             .components(separatedBy: .newlines)
             .map { $0.trimmingCharacters(in: .whitespaces) }
