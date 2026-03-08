@@ -14,6 +14,7 @@ struct OSCARApp: App {
                 Button("Edit Oscar Items...") {
                     NotificationCenter.default.post(name: NSNotification.Name("OpenEditorRequested"), object: nil)
                 }
+                .keyboardShortcut("e", modifiers: .command)
             }
 
             CommandGroup(after: .printItem) {
