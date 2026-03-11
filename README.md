@@ -11,7 +11,7 @@ It's now super easy to generate O.S.C.A.R. sheets for your own party.
 
 ---
 
-If you'd like to update what gets randomized for each cell, modify the `input/oscar.txt` file and run the app again. Super easy.
+Use Cmd+E to edit the categories and items for randomization.
 
 ---
 
