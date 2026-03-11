@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips:*)",
+      "Bash(plutil:*)",
+      "Bash(git checkout:*)",
+      "Bash(perl -i -pe:*)",
+      "Bash(find:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(open:*)"
+    ]
+  }
+}
